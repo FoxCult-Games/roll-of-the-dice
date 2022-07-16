@@ -1,0 +1,124 @@
+[
+    {
+        "id": 1,
+        "message": "Hello!",
+        "yesText": "Hi!",
+        "noText": "...",
+        "yesAction": 2,
+        "noAction": 3
+    },
+    {
+        "id": 2,
+        "message": "Welcome into my world! As you can see, it's decorated just as I imagined.",
+        "yesText": "Looks great!",
+        "noText": "It's awful!",
+        "yesAction": 4,
+        "noAction": 5
+    },
+    {
+        "id": 3,
+        "message": "Wellll.... Anyway. Welcome to my world. Ask whathever you want!",
+        "yesText": "Stranger",
+        "noText": "Room",
+        "yesAction": 6,
+        "noAction": 7
+    },
+    {
+        "id": 4,
+        "message": "Thanks! What exactly brings you here?",
+        "yesText": "I don't know",
+        "noText": "You tell me",
+        "yesAction": 11,
+        "noAction": 12
+    },
+    {
+        "id": 5,
+        "message": "Why are you so mean? We just met, show some empathy.",
+        "yesText": "Sorry",
+        "noText": "...",
+        "yesAction": 9,
+        "noAction": 10
+    },
+    {
+        "id": 6,
+        "message": "You want to know who I am?\n Well, as I already told you - I am the owner of this place.",
+        "yesText": "Okay",
+        "noText": "It's awful!",
+        "yesAction": 8,
+        "noAction": 8
+    },
+    {
+        "id": 7,
+        "message": "You want to know what is this place? I promise you'll find out in a moment.",
+        "yesText": "Sounds Great!",
+        "noText": "I don't want to!",
+        "yesAction": 8,
+        "noAction": 8
+    },
+    {
+        "id": 8,
+        "message": "I bet you would like to play a game with me.",
+        "yesText": "Of course",
+        "noText": "No",
+        "yesAction": 13,
+        "noAction": 14
+    },
+    {
+        "id": 9,
+        "message": "... *sounds of disappointment* Anyway. Ask me whatever you want!",
+        "yesText": "Stranger",
+        "noText": "Room",
+        "yesAction": 8,
+        "noAction": 8
+    },
+    {
+        "id": 10,
+        "message": "Okay, I understand now. It's useless! I tried giving you chance but you wasted it. Let's just start...",
+        "yesText": "What?",
+        "noText": "...",
+        "yesAction": 0,
+        "noAction": 0
+    },
+    {
+        "id": 11,
+        "message": "I understand. Well, you can ask me whatever you want.",
+        "yesText": "Stranger",
+        "noText": "Room",
+        "yesAction": 6,
+        "noAction": 7
+    },
+    {
+        "id": 12,
+        "message": "That's not nice of you...",
+        "yesText": "Sorry",
+        "noText": "Ok.",
+        "yesAction": 9,
+        "noAction": 10
+    },
+    {
+        "id": 13,
+        "message": "Let's start!",
+        "yesText": "Ok.",
+        "noText": null,
+        "yesAction": 0,
+        "noAction": 0
+    },
+    {
+        "id": 14,
+        "message": "That's a pity ... because you don't have a choice anyway",
+        "yesText": "...",
+        "noText": null,
+        "yesAction": 0,
+        "noAction": 0
+    },
+
+    
+    {
+        "id": 15,
+        "message": "So, you are probably thinking you own your fate? \nLet me prove you wrong",
+        "yesText": null,
+        "noText": null,
+        "yesAction": 0,
+        "noAction": 0
+    }
+]
