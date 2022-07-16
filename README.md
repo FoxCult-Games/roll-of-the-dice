@@ -1,1 +1,3 @@
-# roll-of-the-dice
+# Roll of the Dice
+
+Project for GMTK GameJam 2022
