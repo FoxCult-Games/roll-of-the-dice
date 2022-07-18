@@ -1,0 +1,352 @@
+[
+    {
+        "id": 1,
+        "message": "Hello!",
+        "yesText": "Hi!",
+        "noText": "...",
+        "yesAction": 2,
+        "noAction": 3
+    },
+    {
+        "id": 2,
+        "message": "Welcome into my world! As you can see, it's decorated just as I imagined.",
+        "yesText": "Looks great!",
+        "noText": "It's awful!",
+        "yesAction": 4,
+        "noAction": 5
+    },
+    {
+        "id": 3,
+        "message": "Wellll.... Anyway. Welcome to my world. Ask whathever you want!",
+        "yesText": "Stranger",
+        "noText": "Room",
+        "yesAction": 6,
+        "noAction": 7
+    },
+    {
+        "id": 4,
+        "message": "Thanks! What exactly brings you here?",
+        "yesText": "I don't know",
+        "noText": "You tell me",
+        "yesAction": 11,
+        "noAction": 12
+    },
+    {
+        "id": 5,
+        "message": "Why are you so mean? We just met, show some empathy.",
+        "yesText": "Sorry",
+        "noText": "...",
+        "yesAction": 9,
+        "noAction": 10
+    },
+    {
+        "id": 6,
+        "message": "You want to know who I am?\n Well, as I already told you - I am the owner of this place.",
+        "yesText": "Okay",
+        "noText": "It's awful!",
+        "yesAction": 8,
+        "noAction": 8
+    },
+    {
+        "id": 7,
+        "message": "You want to know what is this place? I promise you'll find out in a moment.",
+        "yesText": "Sounds Great!",
+        "noText": "I don't want to!",
+        "yesAction": 8,
+        "noAction": 8
+    },
+    {
+        "id": 8,
+        "message": "I bet you would like to play a game with me.",
+        "yesText": "Of course",
+        "noText": "No",
+        "yesAction": 13,
+        "noAction": 14
+    },
+    {
+        "id": 9,
+        "message": "... *sounds of disappointment* Anyway. Ask me whatever you want!",
+        "yesText": "Stranger",
+        "noText": "Room",
+        "yesAction": 8,
+        "noAction": 8
+    },
+    {
+        "id": 10,
+        "message": "Okay, I understand now. It's useless! I tried giving you chance but you wasted it. Let's just start...",
+        "yesText": "What?",
+        "noText": "...",
+        "yesAction": 0,
+        "noAction": 0
+    },
+    {
+        "id": 11,
+        "message": "I understand. Well, you can ask me whatever you want.",
+        "yesText": "Stranger",
+        "noText": "Room",
+        "yesAction": 6,
+        "noAction": 7
+    },
+    {
+        "id": 12,
+        "message": "That's not nice of you...",
+        "yesText": "Sorry",
+        "noText": "Ok.",
+        "yesAction": 9,
+        "noAction": 10
+    },
+    {
+        "id": 13,
+        "message": "Let's start!",
+        "yesText": "Ok.",
+        "noText": null,
+        "yesAction": 0,
+        "noAction": 0
+    },
+    {
+        "id": 14,
+        "message": "That's a pity ... because you don't have a choice anyway",
+        "yesText": "...",
+        "noText": null,
+        "yesAction": 0,
+        "noAction": 0
+    },
+
+    
+    {
+        "id": 15,
+        "message": "So, you are probably thinking you own your fate? \nLet me prove you wrong",
+        "yesText": null,
+        "noText": null,
+        "yesAction": 0,
+        "noAction": 0
+    },
+
+    
+    {
+        "id": 16,
+        "message": "Great Job!",
+        "yesText": null,
+        "noText": null,
+        "yesAction": 0,
+        "noAction": 0
+    },
+    {
+        "id": 17,
+        "message": "That's not right",
+        "yesText": null,
+        "noText": null,
+        "yesAction": 0,
+        "noAction": 0
+    },
+    {
+        "id": 18,
+        "message": "This is definitly wrong",
+        "yesText": null,
+        "noText": null,
+        "yesAction": 0,
+        "noAction": 0
+    },
+    {
+        "id": 19,
+        "message": "Are you color blind?",
+        "yesText": null,
+        "noText": null,
+        "yesAction": 0,
+        "noAction": 0
+    },
+    {
+        "id": 20,
+        "message": "Maybe you are just stupid...",
+        "yesText": null,
+        "noText": null,
+        "yesAction": 0,
+        "noAction": 0
+    },
+    {
+        "id": 21,
+        "message": "Just do it correctly!",
+        "yesText": null,
+        "noText": null,
+        "yesAction": 0,
+        "noAction": 0
+    },
+    {
+        "id": 22,
+        "message": "OMG... I can't do it any more",
+        "yesText": null,
+        "noText": null,
+        "yesAction": 0,
+        "noAction": 0
+    },
+    {
+        "id": 23,
+        "message": "You know what? Let me just finish it...",
+        "yesText": null,
+        "noText": null,
+        "yesAction": 0,
+        "noAction": 0
+    },
+
+    
+    {
+        "id": 24,
+        "message": "You did great! Let's do another round!",
+        "yesText": null,
+        "noText": null,
+        "yesAction": 0,
+        "noAction": 0
+    },
+    {
+        "id": 25,
+        "message": "Well, it wasn't that bad. \nMaybe this rounde would be better",
+        "yesText": null,
+        "noText": null,
+        "yesAction": 0,
+        "noAction": 0
+    },
+    {
+        "id": 26,
+        "message": "Maybe you are trying proving me wrong \nbut that doesn't change anything! ... Let's do another round",
+        "yesText": null,
+        "noText": null,
+        "yesAction": 0,
+        "noAction": 0
+    },
+
+
+    {
+        "id": 27,
+        "message": "Okay... I-I didn't quite expect that... \nAnyway, Good for you.",
+        "yesText": null,
+        "noText": null,
+        "yesAction": 0,
+        "noAction": 0
+    },
+    {
+        "id": 28,
+        "message": "Oh no, it looks like there's something missing",
+        "yesText": null,
+        "noText": null,
+        "yesAction": 0,
+        "noAction": 0
+    },
+    {
+        "id": 29,
+        "message": "I see you are stuck. \nBut maybe there is solution to this problem",
+        "yesText": null,
+        "noText": null,
+        "yesAction": 0,
+        "noAction": 0
+    },
+    {
+        "id": 30,
+        "message": "Maybe you have to try harder?",
+        "yesText": null,
+        "noText": null,
+        "yesAction": 0,
+        "noAction": 0
+    },
+    {
+        "id": 31,
+        "message": "Or maybe you are not really \nin control of your own fate",
+        "yesText": null,
+        "noText": null,
+        "yesAction": 0,
+        "noAction": 0
+    },
+    {
+        "id": 32,
+        "message": "Let me finish this for you",
+        "yesText": null,
+        "noText": null,
+        "yesAction": 0,
+        "noAction": 0
+    },
+
+    
+
+    
+    {
+        "id": 33,
+        "message": "I wasn't expecting that but I must admit...\nYou did outsmart me. Unbelivable.",
+        "yesText": null,
+        "noText": null,
+        "yesAction": 0,
+        "noAction": 0
+    },
+    {
+        "id": 34,
+        "message": "You know this could have been done faster?",
+        "yesText": null,
+        "noText": null,
+        "yesAction": 0,
+        "noAction": 0
+    },
+    {
+        "id": 35,
+        "message": "... Pathetic! ...",
+        "yesText": null,
+        "noText": null,
+        "yesAction": 0,
+        "noAction": 0
+    },
+
+    
+    {
+        "id": 36,
+        "message": "Do you still think you own your fate?",
+        "yesText": "Yes",
+        "noText": "Maybe...",
+        "yesAction": 37,
+        "noAction": 41
+    },
+    {
+        "id": 37,
+        "message": "So I failed, didn't I? \nOr maybe I just made you more confident?",
+        "yesText": "I guess so",
+        "noText": "Rather not",
+        "yesAction": 38,
+        "noAction": 42
+    },
+    {
+        "id": 38,
+        "message": "This or other way I definitly helped you \nunderstanding the reality. You don't have to thank me (but I would appreciate it). I think it's time for both of us",
+        "yesText": "Great!",
+        "noText": "...",
+        "yesAction": 39,
+        "noAction": 40
+    },
+    {
+        "id": 39,
+        "message": "Goodbye fellow",
+        "yesText": "Goodbye",
+        "noText": null,
+        "yesAction": 0,
+        "noAction": 0
+    },
+    {
+        "id": 40,
+        "message": "Bye",
+        "yesText": "...",
+        "noText": null,
+        "yesAction": 0,
+        "noAction": 0
+    },
+    {
+        "id": 41,
+        "message": "I have planted a seed of uncertainty in you. Now it's your turn. \n( •̀ᴗ•́ )و ̑̑",
+        "yesText": "What?",
+        "noText": null,
+        "yesAction": 0,
+        "noAction": 0
+    },
+    {
+        "id": 42,
+        "message": "Then I failed on both fields. I have nothing there left. Just leave!",
+        "yesText": "Bye!",
+        "noText": null,
+        "yesAction": 0,
+        "noAction": 0
+    }
+]

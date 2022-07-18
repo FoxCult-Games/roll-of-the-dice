@@ -11,12 +11,14 @@ public class DialogueSystem : MonoBehaviour
 {
     [SerializeField] private DialogueSystemData dialogueSystemData;
     [SerializeField] private LevelLoader levelLoader;
+    [SerializeField] private PlaySound playSound;
 
     private DialogueMessages messages;
     private TextMeshProUGUI dialogueContainer;
     private string targetMessage;
     private Coroutine typpingAnimation; 
-    [SerializeField] private int startingMessage;
+    public int startingMessage;
+    [SerializeField] private bool initializeOnLoad = true;
     [SerializeField] private Dictionary<int, bool> playerChoices = new Dictionary<int, bool>();
     [SerializeField] private Button agreeButton;
     [SerializeField] private Button disagreeButton;
@@ -25,6 +27,8 @@ public class DialogueSystem : MonoBehaviour
 
     private TextMeshProUGUI agreeButtonText;
     private TextMeshProUGUI disagreeButtonText;
+
+    [SerializeField] private string nextSceneName = "MainGameplay";
 
     public event EventHandler OnDialogueFinished;
 
@@ -37,7 +41,8 @@ public class DialogueSystem : MonoBehaviour
 
     void Start()
     {
-        LoadDialogue(startingMessage);
+        gameObject.SetActive(false);
+        if(initializeOnLoad) LoadDialogue(startingMessage);
     }
 
     /// <summary>
@@ -46,6 +51,11 @@ public class DialogueSystem : MonoBehaviour
     /// <param name="index">Index of the dialogue</param>
     public void LoadDialogue(int index){
         if(!isTyppingAnimationFinished()) StopCoroutine(typpingAnimation);
+
+        if(playSound == null) playSound = FindObjectOfType<PlaySound>();
+
+        gameObject.SetActive(true);
+
         agreeButton.onClick.RemoveAllListeners();
         disagreeButton.onClick.RemoveAllListeners();
 
@@ -73,7 +83,7 @@ public class DialogueSystem : MonoBehaviour
                 else playerChoices.Add(index, false);
 
                 if(message.yesAction == 0){
-                    levelLoader.PlayTransitionAnimation("MainGameplay");
+                    levelLoader.PlayTransitionAnimation(nextSceneName);
                 } else 
                     LoadDialogue(message.yesAction);
             }
@@ -86,7 +96,7 @@ public class DialogueSystem : MonoBehaviour
                 else playerChoices.Add(index, false);
 
                 if(message.noAction == 0){
-                    levelLoader.PlayTransitionAnimation("MainGameplay");
+                    levelLoader.PlayTransitionAnimation(nextSceneName);
                 } else 
                     LoadDialogue(message.noAction);
             }
@@ -103,13 +113,13 @@ public class DialogueSystem : MonoBehaviour
     public void OnSkipDialogue(){
         if(!listenForInputs) return;
 
-        Debug.Log(isTyppingAnimationFinished());
+        Debug.Log("skipping");
 
         if(!isTyppingAnimationFinished()) SkipDialogue();
         else OnDialogueFinished?.Invoke(this, EventArgs.Empty);
     }
 
-    private void SkipDialogue(){
+    public void SkipDialogue(){
         StopCoroutine(typpingAnimation);
         dialogueContainer.text = targetMessage;
     }
@@ -126,6 +136,7 @@ public class DialogueSystem : MonoBehaviour
         for (int i = 0; i < text.Length; i++)
         {
             dialogueContainer.text += text[i];
+            playSound._PlaySound(dialogueSystemData.typpingAnimationClip);
             yield return new WaitForSeconds(dialogueSystemData.typpingDelay);
         }
     }
@@ -134,7 +145,7 @@ public class DialogueSystem : MonoBehaviour
     /// Checks if typping animation is finished
     /// </summary>
     /// <returns></returns>
-    private bool isTyppingAnimationFinished() {
+    public bool isTyppingAnimationFinished() {
         if(typpingAnimation == null) return true;
         return dialogueContainer.text == targetMessage;
     }
@@ -146,7 +157,7 @@ public class DialogueSystem : MonoBehaviour
     /// An array of DialogueMessages
     /// </returns>
     private DialogueMessages ReadMessagesFromFile(){
-        string context = File.ReadAllText(Application.dataPath + "/Resources/content/dialogues.json"); 
+        string context = File.ReadAllText(Application.streamingAssetsPath + "/dialogues.json"); 
         DialogueMessages result = JsonUtility.FromJson<DialogueMessages>("{\"messages\":" + context + "}");
         return result;
     }

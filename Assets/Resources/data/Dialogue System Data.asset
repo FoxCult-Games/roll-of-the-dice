@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Dialogue System Data
   m_EditorClassIdentifier: 
   typpingDelay: 0.075
+  typpingAnimationClip: {fileID: 8300000, guid: d1ed18eb8d612b7468caf8d49eec6c7c, type: 3}

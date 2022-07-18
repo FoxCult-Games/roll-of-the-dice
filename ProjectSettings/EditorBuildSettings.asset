@@ -17,4 +17,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BallsGameplay.unity
     guid: 24b37d189fd0d6e47b2beb5f1ce22416
+  - enabled: 1
+    path: Assets/Scenes/MainGameplay_second.unity
+    guid: f42d68e512d90fa48b35fbcc09d629cd
+  - enabled: 1
+    path: Assets/Scenes/BallsGameplay_second.unity
+    guid: a81cd3bb2120d3d48b2136de5ce46223
+  - enabled: 1
+    path: Assets/Scenes/MainGameplay_third.unity
+    guid: baf09827fbf69734d828ab54d5932640
+  - enabled: 1
+    path: Assets/Scenes/DialogueScene_End.unity
+    guid: 4e2eecdad6d6f7046a3772fda546650b
   m_configObjects: {}

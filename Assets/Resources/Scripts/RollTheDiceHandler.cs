@@ -2,22 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 public class RollTheDiceHandler : MonoBehaviour
 {
     [Header("Transition")]
-    [SerializeField] private LevelLoader levelLoader;
+    public LevelLoader levelLoader;
     [SerializeField] private float transitionDuration;
     [SerializeField] private CanvasGroup RollDicePanel;
     [SerializeField] private float rollDicePanelFadeTransitionOffset;
 
     [Header("Dialogue System")]
-    [SerializeField] private DialogueSystem dialogueSystem;
+    public DialogueSystem dialogueSystem;
 
-    private event EventHandler OnRollDicePanelFaded; 
+    public event EventHandler OnRollDicePanelFaded; 
 
     public void HandleButtonClicked(){
-        OnRollDicePanelFaded += InitDialogueSystem;
+        GetComponent<Button>().interactable = false;
         StartCoroutine(AfterButtonAnimation());
     }
 
@@ -32,16 +33,8 @@ public class RollTheDiceHandler : MonoBehaviour
             RollDicePanel.alpha -= rollDicePanelFadeTransitionOffset;
         }
 
+        RollDicePanel.gameObject.SetActive(false);
+
         OnRollDicePanelFaded?.Invoke(this, EventArgs.Empty);
-    }
-
-    private void InitDialogueSystem(object o, EventArgs args){
-        dialogueSystem.gameObject.SetActive(true);
-        dialogueSystem.OnDialogueFinished += LoadBallsGameplayScene;
-        dialogueSystem.LoadDialogue(15);
-    }
-
-    private void LoadBallsGameplayScene(object o, EventArgs args){
-        levelLoader.PlayTransitionAnimation("BallsGameplay");
     }
 }

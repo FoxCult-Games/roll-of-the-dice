@@ -19,8 +19,6 @@ public class BallController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("trigger");
-
         if(!other.CompareTag("Basket")) return;
 
         if(other.transform.parent.TryGetComponent<BallGameplayController>(out ballGameplayController)){

@@ -131,7 +131,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 40, y: 0, z: 40, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -151,8 +151,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueSystemData: {fileID: 11400000, guid: 20de996ce98b83d4396584e2f8cd0759, type: 2}
   levelLoader: {fileID: 0}
+  playSound: {fileID: 0}
+  startingMessage: 0
+  initializeOnLoad: 1
   agreeButton: {fileID: 0}
   disagreeButton: {fileID: 0}
+  listenForInputs: 0
 --- !u!114 &4300743100865875952
 MonoBehaviour:
   m_ObjectHideFlags: 0

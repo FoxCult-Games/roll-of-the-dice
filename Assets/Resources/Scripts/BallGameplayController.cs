@@ -6,12 +6,19 @@ using System;
 
 public class BallGameplayController : MonoBehaviour
 {
+    [SerializeField] private int round = 1;
     [SerializeField] private int ballsCount = 4;
     [SerializeField] private GameObject ballPrefab;
     [SerializeField] private Basket[] ballsTypes;
     private List<BallColor> ballsColors = new List<BallColor>();
-    private List<BallController> balls = new List<BallController>();
+    [SerializeField] private List<BallController> balls = new List<BallController>();
     [SerializeField] private int mistakes = 0;
+    [SerializeField] private DialogueSystem dialogueSystem;
+    [SerializeField] private LevelLoader levelLoader;
+    private bool gameEnded = false;
+    [SerializeField] private bool playerControlGame = true;
+    [SerializeField] private string nextSceneName;
+    [SerializeField] private int endingMistakes = 7;
 
     void Start()
     {
@@ -26,21 +33,64 @@ public class BallGameplayController : MonoBehaviour
     }
 
     public void CheckBaskets(){
-        Debug.Log("Checking baskets!");
+        if(!dialogueSystem.isTyppingAnimationFinished()){
+            dialogueSystem.SkipDialogue();
+            return;
+        }
+
+        if(gameEnded){
+            PlayerPrefs.SetInt($"round{round}_mistakes", mistakes);
+            levelLoader.PlayTransitionAnimation(nextSceneName);
+            return;
+        } 
+
+        Dictionary<Basket, bool> assignedBaskets = new Dictionary<Basket, bool>();
+
+        foreach(Basket basket in ballsTypes){
+            assignedBaskets.Add(basket, false);
+        }
+
+        int _mistakes = 0;
 
         foreach (BallController ball in balls)
         {
             if(ball.IsAssigned()) {
-                if(ball.GetBasket().color == ball.GetComponent<Image>().color){
-
-                } else {
-                    Debug.Log("Nie właściwe przypisanie!");
+                if(ball.GetBasket().color != ball.GetComponent<Image>().color){
                     mistakes++;
+                    _mistakes++;
+                    break;
                 }
             } else {
-                Debug.Log("Nie skończono!");
+                mistakes++;
+                _mistakes++;
+                break;
             }
         }
+
+        foreach(Basket assignedBasket in new List<Basket>(assignedBaskets.Keys)){
+            bool assigned = false;
+
+            foreach(BallController ball in balls){
+                if(ball.GetBasket().basket == assignedBasket.basket){
+                    assignedBaskets[assignedBasket] = true;
+                    assigned = true;
+                    break;
+                }
+            }
+
+            if(!assigned) _mistakes++;
+        }
+
+        if(_mistakes > 0) ChooseMessage(dialogueSystem.startingMessage + mistakes);
+        else ChooseMessage(dialogueSystem.startingMessage);
+
+        if((_mistakes == 0 || mistakes == endingMistakes) && !gameEnded){
+            gameEnded = true;
+        }
+    }
+
+    private void ChooseMessage(int index){
+        dialogueSystem.LoadDialogue(index);
     }
 
     private IEnumerator SpawnBall(){
